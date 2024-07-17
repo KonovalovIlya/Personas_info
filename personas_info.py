@@ -713,10 +713,13 @@ def create_data():
 
 
 def main(data):
-    persona = input('Введи название персоны:\n')
-    for item in data:
-        if item['persona'] == persona:
-            print('Eager:', *item['Eager'], '\nHappy:', *item['Happy'])
+    while True:
+        persona = input('Введи название персоны:\n')
+        if persona in ['x', 'X']:
+            break
+        for item in data:
+            if item['persona'] == persona:
+                print('Eager:', *item['Eager'], '\nHappy:', *item['Happy'])
 
 
 if __name__ == '__main__':
